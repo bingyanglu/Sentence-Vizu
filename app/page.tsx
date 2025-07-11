@@ -15,10 +15,10 @@ export default function Home() {
   const [analysisResult, setAnalysisResult] = useState<AnalysisResult>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
 
-  const [email, setEmail] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formError, setFormError] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [isSubmitting, setIsSubmitting] = useState(false);
+  // const [isSubmitted, setIsSubmitted] = useState(false);
+  // const [formError, setFormError] = useState('');
 
   const colorMap: { [key: string]: string } = {
     'Noun': 'bg-blue-100 text-blue-800',
@@ -73,6 +73,7 @@ export default function Home() {
     }
   };
 
+  /*
   const handleWaitlistSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !email.includes('@')) {
@@ -85,6 +86,7 @@ export default function Home() {
     setIsSubmitting(false);
     setIsSubmitted(true);
   };
+  */
   
   const usedTags = analysisResult ? new Set(analysisResult.map(t => t.tag).filter(t => t !== 'Punctuation')) : new Set<string>();
 
@@ -152,6 +154,7 @@ export default function Home() {
               </section>
             )}
 
+            {/*
             <section className="text-center">
                 <h2 className="text-4xl font-extrabold text-gray-900 mb-4">The Future of Sentence Diagramming</h2>
                 <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">We're building two powerful new ways to visualize grammar. Be the first to try them.</p>
@@ -202,6 +205,8 @@ export default function Home() {
                     )}
                 </div>
             </section>
+            */}
+
         </main>
 
         <footer className="mt-16 text-center text-gray-500 text-sm p-4">
