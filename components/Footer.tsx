@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex flex-col items-center text-center gap-6 mb-8">
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <Logo size={32} />
+            <Logo iconSize={32} />
             <span className="text-2xl font-bold text-primary-brand">SentenceVizu</span>
           </div>
           <p className="text-muted-foreground text-lg max-w-md">
