@@ -1,0 +1,7 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <title>SentenceVizu Logo</title>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30 20 L50 60 L70 20" stroke="#2563eb" stroke-width="12"/>
+    <path d="M85 35 C 85 55, 65 65, 50 65 S 15 75, 15 90" stroke="#111827" stroke-width="10" />
+  </g>
+</svg> 
