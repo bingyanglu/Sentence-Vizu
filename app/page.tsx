@@ -94,7 +94,6 @@ export default function Home() {
 
       <main className="overflow-x-hidden">
         <div className="container mx-auto px-4">
-          {/* Hero Section */}
           <div className="relative flex flex-col items-center justify-center text-center py-8 sm:py-16">
             <div className="w-full max-w-5xl mx-auto px-4">
               <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-primary-brand">Master English Sentences. Visually.</h1>
