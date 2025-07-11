@@ -6,6 +6,11 @@
   html {
     scroll-behavior: smooth;
   }
+  body {
+    background-color: #f8fafc; /* Light Gray Background */
+    color: #1f2937; /* Dark Slate Text */
+    overflow-x: hidden;
+  }
 }
 
 @layer components {
@@ -30,9 +35,37 @@
     }
     .token {
         transition: all 0.2s ease;
+        cursor: default;
     }
     .token:hover {
         transform: translateY(-2px);
         filter: brightness(1.05);
+    }
+    .text-muted-foreground {
+        color: #6b7280; /* Medium Gray Text */
+    }
+    .bg-card {
+        background-color: #ffffff; /* White Card Background */
+    }
+    .border-border {
+        border-color: #e5e7eb; /* Light Gray Border */
+    }
+    .text-primary-brand {
+        color: #111827; /* Near Black for Brand */
+    }
+    .bg-primary-btn {
+         background-color: #2563eb; /* Primary Blue */
+         color: #ffffff;
+    }
+    .bg-primary-btn:hover:not(:disabled) {
+        background-color: #1d4ed8; /* Darker Blue on Hover */
+    }
+    #results-container, #features-section {
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        transform: translateY(20px);
+    }
+    #results-container.visible, #features-section.visible {
+        opacity: 1;
+        transform: translateY(0);
     }
 } 
