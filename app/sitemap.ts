@@ -1,12 +1,19 @@
 import { MetadataRoute } from 'next'
 
+type ChangeFrequency = 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never'
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: 'https://sentencevizu.com',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
+  const baseUrl = 'https://sentencevizu.com'
+
+  const staticRoutes: { url: string; changeFrequency: ChangeFrequency; priority: number }[] = [
+    { url: `${baseUrl}/`, changeFrequency: 'monthly', priority: 1.0 },
+    { url: `${baseUrl}/about`, changeFrequency: 'yearly', priority: 0.8 },
+    { url: `${baseUrl}/terms`, changeFrequency: 'yearly', priority: 0.5 },
+    { url: `${baseUrl}/privacy`, changeFrequency: 'yearly', priority: 0.5 },
   ]
+
+  return staticRoutes.map((route) => ({
+    ...route,
+    lastModified: new Date(),
+  }))
 } 
