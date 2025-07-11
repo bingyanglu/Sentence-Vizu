@@ -1,60 +1,36 @@
-import { useId } from 'react';
-
 interface LogoProps {
-  size?: number;
+  showText?: boolean;
   className?: string;
+  iconSize?: number;
 }
 
-export default function Logo({ size = 32, className = "" }: LogoProps) {
-  const gradientId = useId();
-  
-  return (
+export default function Logo({ showText = false, className = "", iconSize = 32 }: LogoProps) {
+  const SvgIcon = ({size, svgClassName}: {size: number, svgClassName?: string}) => (
     <svg 
-      width={size} 
-      height={size} 
-      viewBox="0 0 32 32" 
-      fill="none" 
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      className={svgClassName}
     >
-      {/* 梯度定义 */}
-      <defs>
-        <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#2563eb" />
-          <stop offset="50%" stopColor="#3b82f6" />
-          <stop offset="100%" stopColor="#6366f1" />
-        </linearGradient>
-      </defs>
-      
-      {/* 背景圆角矩形 */}
-      <rect 
-        width="32" 
-        height="32" 
-        rx="8" 
-        fill={`url(#${gradientId})`}
-      />
-      
-      {/* 字母S的现代化设计，结合数据可视化元素 */}
-      <g fill="white">
-        {/* S字母的上半部分 */}
-        <path d="M10 10h8c2 0 4 1.5 4 3.5s-2 3.5-4 3.5h-4" 
-              stroke="white" 
-              strokeWidth="2.5" 
-              strokeLinecap="round" 
-              fill="none"/>
-        
-        {/* S字母的下半部分 */}
-        <path d="M22 22h-8c-2 0-4-1.5-4-3.5s2-3.5 4-3.5h4" 
-              stroke="white" 
-              strokeWidth="2.5" 
-              strokeLinecap="round" 
-              fill="none"/>
-        
-        {/* 可视化数据点 */}
-        <circle cx="24" cy="12" r="1.5" />
-        <circle cx="8" cy="20" r="1.5" />
-        <circle cx="16" cy="16" r="1" opacity="0.8" />
+      <title>SentenceVizu Logo</title>
+      <g fill="none" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M30 20 L50 60 L70 20" stroke="#2563eb" strokeWidth="12"/>
+        <path d="M85 35 C 85 55, 65 65, 50 65 S 15 75, 15 90" stroke="#111827" strokeWidth="10" />
       </g>
     </svg>
   );
+
+  if (showText) {
+    return (
+      <div className={`flex items-center gap-2 ${className}`}>
+        <SvgIcon size={32} svgClassName=""/> 
+        <span className="text-xl font-bold text-gray-800 dark:text-gray-200">
+          Sentence<span className="text-blue-600">Vizu</span>
+        </span>
+      </div>
+    );
+  }
+
+  return <SvgIcon size={iconSize} svgClassName={className} />;
 } 

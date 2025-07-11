@@ -129,6 +129,7 @@ export default function Home() {
                       className="relative px-4 sm:px-6 py-2 text-sm rounded-md font-semibold bg-primary-btn disabled:opacity-50 disabled:cursor-not-allowed"
                       onClick={analyzeSentence}
                       disabled={isAnalyzing || !input.trim()}
+                      aria-label="Analyze the entered sentence for grammar and parts of speech"
                     >
                       {isAnalyzing ? 'Analyzing...' : 'Analyze'}
                     </button>

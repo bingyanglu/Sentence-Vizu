@@ -15,6 +15,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
     title: 'SentenceVizu | Sentence Diagramming & Visual Analysis Tool',
     description: 'From color-coding to full Reed-Kellogg diagrams, master English grammar visually.',
